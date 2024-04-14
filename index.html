@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!--projecttitle--><title>test1</title><!--projecttitle-end-->
+		<!--projecttitle--><title>roong4</title><!--projecttitle-end-->
 		<!--projectdescription--><meta name="description" content="New 3Sixty Virtual Tour Project"><!--projectdescription-end-->
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta charset="utf-8">
@@ -96,7 +96,8 @@
 		<div id="tmp">
 			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
 			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
-		</div>
+		</div>
+
 
 		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
     		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
@@ -109,13 +110,16 @@
 			
             var container = document.querySelector( '#container' );
 			/*panolens*/
-var viewer = new PANOLENS.Viewer( { container: container , controlBar: true,  output: 'console' , autoHideInfospot: false, } );
-/*panolens-end*/
+
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: true,  output: 'console' , autoHideInfospot: false, } );
+
+/*panolens-end*/
 			
 			viewer.addUpdateCallback(function(){});
 			
 			/*panoramas*/
-var testpanorama = new PANOLENS.ImagePanorama( "panoramas/testpanorama.jpg" );
+
+var testpanorama = new PANOLENS.ImagePanorama( "panoramas/testpanorama.jpg" );
 			testpanorama.addEventListener('progress', onProgress);
 			testpanorama.addEventListener('load', function(e){
 				endLoading();
@@ -126,19 +130,28 @@
 			testpanorama.addEventListener('click', function(e){
 			});
 
-var infospottestpanorama0 = new PANOLENS.Infospot( 512, hotspotIcons[5].data, true );
+
+var infospottestpanorama0 = new PANOLENS.Infospot( 512, hotspotIcons[5].data, true );
 					infospottestpanorama0.position.set( -3244.68, -674.66, -3734.74 );
 					testpanorama.add(infospottestpanorama0);
-infospottestpanorama0.addEventListener('click', function(){
-window.open( 'https://boundlessgesture.com', '_blank');
-});
-var infospottestpanorama1 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+infospottestpanorama0.addEventListener('click', function(){
+
+window.open( 'https://boundlessgesture.com', '_blank');
+
+});
+
+var infospottestpanorama1 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 					infospottestpanorama1.position.set( -3230.40, -304.28, -3793.69 );
 					testpanorama.add(infospottestpanorama1);
-infospottestpanorama1.addEventListener('click', function(){
-});
-viewer.add( testpanorama );
-var field = new PANOLENS.ImagePanorama( "panoramas/field.jpg" );
+
+infospottestpanorama1.addEventListener('click', function(){
+
+});
+
+viewer.add( testpanorama );
+
+var field = new PANOLENS.ImagePanorama( "panoramas/field.jpg" );
 			field.addEventListener('progress', onProgress);
 			field.addEventListener('load', function(e){
 				endLoading();
@@ -149,10 +162,13 @@
 			field.addEventListener('click', function(e){
 			});
 
-viewer.add( field );
-$(document).ready(function(){ ChangePanorama('field'); });
 
-/*panoramas-end*/
+viewer.add( field );
+
+$(document).ready(function(){ ChangePanorama('field'); });
+
+
+/*panoramas-end*/
             
 			var stilloading = true;
 			function onProgress ( event ) {
