@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+    <title>Panorama video_the-cacophony-of-unbalance</title>
+    
+
+    <style>
+    @font-face {
+        font-family: 'APSD'; /*font 이름*/
+        font-style: 'normal'; /* font 스타일 정의 (기울임, 일반) */
+        font-weight: 400; /* font 굵기 정의 */
+        /* font 파일 위치 정의 */
+        src: url('AppleSDGothicNeoM.ttf'); 
+    }
+    
+      
+      html, body {
+        font-family: 'APSD';
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      a:link, a:visited{
+        color: #bdc3c7;
+      }
+
+      .credit{
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      #desc-container {
+        max-width: 60%;
+        max-height: 80%;
+        min-width: 60%;
+        min-height: 80%;
+        background: #000;
+        color: #fff;
+        border-radius: 5px;
+        overflow: auto;
+        -webkit-overflow-scrolling: auto;
+      }
+
+      #desc-container > iframe {
+        border: none;
+        width:100%;
+      }
+
+      .title {
+        padding: 5px 20px 20px 20px;
+        font-size: 2.0em;
+        text-align: left;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+        text-align: left;
+        padding: 5px 20px 20px 20px;
+      }
+
+      .text {
+        font-size: 1.0em;
+        text-align: left;
+        padding: 0 20px 20px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="credit"><a href="https://the-cacophony-of-unbalance.com">The-Cacophony-of-Unbalance</a> Virtual Exhbition.</div>
+    
+    <div id="desc-container" style="display:none">
+      
+      <div class="title">구기정</div>
+      <div class="subtitle">구기정, 〈Coagulation>, 2022, 단채널 4k 비디오, 폴리카보네이트 리어스크린, 스테인리스 조형, 빔 프로젝션, 가변크기, 7분 30초</div>
+      <img src="https://the-cacophony-of-unbalance.com/wp-content/uploads/2024/04/%EA%B5%AC%EA%B8%B0%EC%A0%95.jpg" style="max-width:100%; height:auto;"></img>
+
+
+      <div class="text">구기정은 실재하는 자연 풍경을 디지털 기술로 가공하고 이를 물리적 공간에서 감각 가능하도록 배치하는 작업을 시도하며 인간과 기계, 자연 사이에서 발생 가능한 관계들에 주목한다. 〈Coagulation〉는 실제 이끼, 숲, 잔디 등을 매크로 렌즈, 고해상도 카메라로 촬영한 후 3D 렌더링 기술로 합성, 왜곡하여 생성한 디지털 이미지, 살아있는 잔디, 반원의 조형물로 구성된 혼합형 설치작업이다. 영상에 등장하는 디지털 이미지의 자연은 실제 자연보다 더 사실적이고 세밀하게 증강된 모습이다. 작가는 영상을 보는 이로 하여금 실존하는 이미지인지 혹은 디지털로 생산된 이미지인지 교란을 일으켜 딜레마 상태에 빠트리며 일종의 ‘몰입-딜레마＇를 선사한다. 관객은 바닥에 펼쳐진 살아있는 잔디를 직접 밟고 그 위에 놓인 반원의 조형물을 몸으로 체험하며 스크린 속 증강된 이미지를 감상할 수 있다. 작가가 구축한 몰입 환경은 몰입감과 동시에 이질성을 인식할 수 있는 잠재적 균열의 순간들을 창출한다. 실제 자연과 디지털 이미지 사이에 흐르는 미묘한 균형은 실제와 가상의 경계에 대한 사유를 경험하게 한다. 관람객은 현실과 가상의 상호작용을 통해 자신의 신체를 마주하고 본래의 이미지가 관념을 자극하는 방식을 되돌아보며 동시대 자연에 대한 새로운 정의를 마주한다.</div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script src="panolens.min.js"></script>
+
+    <script>
+
+      var infospot, panorama_0, panorama_1, panorama_2, panorama_3, panorama_4, panorama_5, viewer;
+      
+      panorama_0 = new PANOLENS.VideoPanorama( 'videos/mov_main.mp4', { autoplay: true, muted: false } );
+      panorama_1 = new PANOLENS.VideoPanorama( 'videos/mov_1.mp4', { autoplay: true, muted: false } );
+      panorama_2 = new PANOLENS.VideoPanorama( 'videos/mov_2.mp4', { autoplay: true, muted: false } );
+      panorama_3 = new PANOLENS.VideoPanorama( 'videos/mov_3.mp4', { autoplay: true, muted: false } );
+      panorama_4 = new PANOLENS.VideoPanorama( 'videos/mov_4.mp4', { autoplay: true, muted: false } );
+      panorama_5 = new PANOLENS.VideoPanorama( 'videos/mov_5.mp4', { autoplay: true, muted: false } );
+
+      infospot = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+      infospot.position.set( -5000.00, -1825.25, 197.56 );
+      infospot.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+      infospot.lockHoverElement();
+
+      
+      panorama_0.add( infospot );
+
+      viewer = new PANOLENS.Viewer();
+      viewer.add( panorama_0 );
+      viewer.add( panorama_1 );
+      viewer.add( panorama_2 );
+      viewer.add( panorama_3 );
+      viewer.add( panorama_4 );
+      viewer.add( panorama_5 );
+
+    // Linking between panoramas
+    
+    // Pair
+      panorama_0.link( panorama_2, new THREE.Vector3( -3145.23, -3704.40, 1149.48 ) );
+      panorama_2.link( panorama_1, new THREE.Vector3( -3429.01, 1205.85, -3421.88 ) );
+
+    // Pair with custom scale and image
+      panorama_1.link( panorama_3, new THREE.Vector3( -1106.42, -4277.19, -5000.00 ), 400, 'icons/cam.png' );
+      panorama_3.link( panorama_2, new THREE.Vector3( 2092.2, -159.02, -4530.91 ) );
+
+
+
+    </script>
+
+<!---
+    <script>
+
+    var infospot, infospot2, panorama, viewer;
+
+    infospot = new PANOLENS.Infospot();
+    infospot.position.set( 5000.00, -665.23, -3996.49 );
+    infospot.addHoverText( 'The Where Is Bar' );
+
+    infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+    infospot2.position.set( -5000.00, -1825.25, 197.56 );
+    infospot2.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+
+    // Get Google Map API Key - https://developers.google.com/maps/documentation/javascript/get-api-key
+    panorama = new PANOLENS.GoogleStreetviewPanorama( 'rY5ZW6S3sFUAAAAGOzOdpg' );
+    panorama.add( infospot );
+    panorama.add( infospot2 );
+
+    viewer = new PANOLENS.Viewer();
+    viewer.add( panorama );
+
+    </script>
+-->
+
+<!----
+<script>
+
+    var panorama1, panorama2, viewer;
+
+    panorama1 = new PANOLENS.GoogleStreetviewPanorama( 'y0rbkep4RBcAAAQqZe0GiQ' );
+
+    panorama2 = new PANOLENS.ImagePanorama( 'asset/textures/equirectangular/field.jpg' );
+
+    panorama3 = new PANOLENS.VideoPanorama( 'asset/textures/video/1941-battle-low.mp4' );
+
+    viewer = new PANOLENS.Viewer();
+    viewer.add( panorama1 );
+    viewer.add( panorama2 );
+    viewer.add( panorama3 );
+
+    // Linking between panoramas
+    
+    // Pair
+    panorama1.link( panorama2, new THREE.Vector3( -3145.23, -3704.40, 1149.48 ) );
+    panorama2.link( panorama1, new THREE.Vector3( -3429.01, 1205.85, -3421.88 ) );
+
+    // Pair with custom scale and image
+    panorama1.link( panorama3, new THREE.Vector3( -1106.42, -4277.19, -5000.00 ), 400, 'asset/textures/1941-battle-thumb.png' );
+    panorama3.link( panorama2, new THREE.Vector3( 2092.2, -159.02, -4530.91 ) );
+
+  </script>
+
+var panorama, panorama2, viewer, container, infospot;
+
+var lookAtPositions = [
+  new THREE.Vector3(4871.39, 1088.07, -118.41),
+  new THREE.Vector3(1278.27, 732.65, 4769.19)
+];
+
+var infospotPositions = [
+  new THREE.Vector3(3136.06, 1216.30, -3690.14),
+  new THREE.Vector3(3258.81, -295.50, 3771.13)
+];
+
+container = document.querySelector( '#container' );
+
+panorama = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg' );
+panorama.addEventListener( 'enter-fade-start', function(){
+  viewer.tweenControlCenter( lookAtPositions[0], 0 );
+} );
+
+panorama2 = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/cabin.jpg' );
+panorama2.addEventListener( 'enter', function(){
+  viewer.tweenControlCenter( lookAtPositions[1], 0 );
+} );
+
+panorama.link( panorama2, infospotPositions[0] );
+panorama2.link( panorama, infospotPositions[1] );
+
+infospot = new PANOLENS.Infospot( 350, PANOLENS.DataImage.Info );
+infospot.position.set( 0, -2000, -5000 );
+
+panorama.add( infospot );
+
+viewer = new PANOLENS.Viewer( { output: 'console', container: container } );
+viewer.add( panorama, panorama2 );
+
+-->
+
+  </body>
+</html>
